@@ -1,0 +1,21 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - Staging
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Show Branch Name
+        run: echo "Running on branch ${{ github.ref }}"
+
+      - name: Show Files
+        run: ls -la
